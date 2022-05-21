@@ -1,0 +1,27 @@
+Train:
+  batch_size: 32
+  learning_rate: 0.00001
+  stepdown_factor: 0.5
+  reg: 0.005
+  epochs: 101
+  steps: [20, 40, 60, 90]
+  warmup: 0
+  momentum: 0.9
+  weights_path: checkpoints/rn50up-v4-50.pth        #checkpoints/rn50up-v1-17.pth or na
+  model_class: Resnet50BasedUpProjModel
+  start_epoch: 0
+  optimizer: Adam # or SGD Default is Adam
+
+
+network:
+  model: rn50up-v4
+
+data:
+  apply_augmentations: True
+  imbalance: imbalance # regular or imbalance
+  reweight: True
+  beta: 0.999
+  save_best: True
+
+loss:
+  loss_type: inverseHuber

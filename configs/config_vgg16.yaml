@@ -1,0 +1,26 @@
+Train:
+  batch_size: 32
+  learning_rate: 0.00001
+  stepdown_factor: 0.5
+  reg: 0.005
+  epochs: 50
+  steps: [10, 20, 30]
+  warmup: 5
+  momentum: 0.9
+  weights_path: na
+  model_class: VGG-16Based-UpConvolution # other possible values Resnet50BasedModel, Resnet50BasedUpProjModel
+  start_epoch: 0
+  optimizer: Adam # or SGD Default is Adam
+
+network:
+  model: vgg-16-upconv-v2
+
+data:
+  apply_augmentations: True
+  imbalance: imbalance # regular or imbalance
+  reweight: True
+  beta: 0.999
+  save_best: True
+
+loss:
+  loss_type: Focal # CE or Focal or other loss functions

@@ -1,0 +1,18 @@
+name: DeepSense-env
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pyyaml
+  - matplotlib
+  - notebook
+  - opencv-python
+  - tqdm
+  - pandas
+  - h5py
+  - scipy
+  - future
+  - pip
+
+
+
